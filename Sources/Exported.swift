@@ -1,3 +1,3 @@
-@_exported import EIQCommonUtils
-@_exported import EIQJailbreakDetector
-@_exported import EIQOfflineControl
+@_exported import EnliqCommonUtils
+@_exported import EnliqOfflineControl
+@_exported import EnliqJailbreakDetector
