@@ -27,14 +27,10 @@ let package = Package(
     ],
     targets: [
         /// `EIQUtils` target
-        .target(
+        .binaryTarget(
             name: "EIQUtils",
-            dependencies: [
-                "EIQJailbreakDetector",
-                "EIQOfflineControl",
-                "EIQCommonUtils"
-            ],
-            path: "Sources"
+            url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/0.0.4/eiqutils.xcframework.zip",
+            checksum: "f7419131c78138cd57eb3ab409cfce939d18747e2a1a88e25f35139c6a2f3f50"
         ),
         
         /// `EIQJailbreakDetector` target
