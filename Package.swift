@@ -13,16 +13,16 @@ let package = Package(
         ),
         /// **Single packages**
         .library(
-            name: "EIQJailbreakDetector",
-            targets: ["EIQJailbreakDetector"]
+            name: "EnliqJailbreakDetector",
+            targets: ["EnliqJailbreakDetector"]
         ),
         .library(
-            name: "EIQOfflineControl",
-            targets: ["EIQOfflineControl"]
+            name: "EnliqOfflineControl",
+            targets: ["EnliqOfflineControl"]
         ),
         .library(
-            name: "EIQCommonUtils",
-            targets: ["EIQCommonUtils"]
+            name: "EnliqCommonUtils",
+            targets: ["EnliqCommonUtils"]
         )
     ],
     targets: [
@@ -30,30 +30,27 @@ let package = Package(
         .target(
             name: "EnliqUtils",
             dependencies: [
-                "EIQJailbreakDetector",
-                "EIQOfflineControl",
-                "EIQCommonUtils"
+                "EnliqJailbreakDetector",
+                "EnliqOfflineControl",
+                "EnliqCommonUtils"
             ],
             path: "Sources"
         ),
-        
         /// `EIQJailbreakDetector` target
         .binaryTarget(
-            name: "EIQJailbreakDetector",
+            name: "EnliqJailbreakDetector",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqjailbreakdetector.xcframework.zip",
             checksum: "3b7a2a5c419f02d2e8a434586533037a4034a186c6d13cb64011ac76f63a6339"
         ),
- 
         /// `EIQOfflineControl` target
         .binaryTarget(
-            name: "EIQOfflineControl",
+            name: "EnliqOfflineControl",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqofflinecontrol.xcframework.zip",
             checksum: "4c681e0fbe0ec753fa8f7d0457d2a242911ad75df09d8808cd99f8c3b6323145"
         ),
- 
         /// `EIQCommonUtils` target
         .binaryTarget(
-            name: "EIQCommonUtils",
+            name: "EnliqCommonUtils",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqcommonutils.xcframework.zip",
             checksum: "b771e3ce0b810d1806ae80d7dcf5d79610af09683fd5a30ed164ab3e44b23910"
         )
