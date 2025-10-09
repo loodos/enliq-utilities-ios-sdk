@@ -40,19 +40,19 @@ let package = Package(
         .binaryTarget(
             name: "EnliqJailbreakDetector",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqjailbreakdetector.xcframework.zip",
-            checksum: "3b7a2a5c419f02d2e8a434586533037a4034a186c6d13cb64011ac76f63a6339"
+            checksum: "59e453667e458af46c899b08a798b26b87879f8e86de529e4bd50e0e3e6ba4fc"
         ),
         /// `EIQOfflineControl` target
         .binaryTarget(
             name: "EnliqOfflineControl",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqofflinecontrol.xcframework.zip",
-            checksum: "4c681e0fbe0ec753fa8f7d0457d2a242911ad75df09d8808cd99f8c3b6323145"
+            checksum: "7c9ecd078463bec2201ae5209335b69effce26b336fb62343e1b8a6ed64ce69b"
         ),
         /// `EIQCommonUtils` target
         .binaryTarget(
             name: "EnliqCommonUtils",
             url: "https://github.com/loodos/enliq-utilities-ios-sdk/releases/download/1.0.0/eiqcommonutils.xcframework.zip",
-            checksum: "b771e3ce0b810d1806ae80d7dcf5d79610af09683fd5a30ed164ab3e44b23910"
+            checksum: "b5879404730bbd034e64808afa2ba0c32077d176d6ccc56fcc08094101d03607"
         )
     ]
 )
