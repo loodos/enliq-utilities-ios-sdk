@@ -1,113 +1,108 @@
-# EIQUtils
+<p align="center">
+  <img src="https://i.ibb.co/zh0Lrz6J/test.png" alt="Enliq" width="320"/>
+</p>
 
-`EIQUtils` is a Swift package that includes multiple utility packages for iOS development. By integrating this package into your project, you can choose to add one or both of the included sub-packages. This modular setup allows developers to include only the necessary components, optimizing the size and functionality of their apps.
+<h1 align="center">EIQUtils iOS SDK</h1>
 
-## Included Packages
+<p align="center">
+  <a href="https://github.com/loodos/enliq-utilities-ios-sdk/releases/latest"><img src="https://img.shields.io/github/v/release/loodos/enliq-utilities-ios-sdk?label=release&sort=semver" alt="Latest release"/></a>
+  <img src="https://img.shields.io/badge/platform-iOS%2015.0%2B-blue.svg" alt="Platform iOS 15.0+"/>
+  <a href="https://swift.org/package-manager"><img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="Swift Package Manager compatible"/></a>
+  <img src="https://img.shields.io/badge/distribution-XCFramework-lightgrey.svg" alt="Binary XCFramework"/>
+</p>
 
-### 1. EIQJailbreakDetector
+<p align="center">
+  Security, connectivity, update control, localization, validation and UI helpers<br/>
+  for iOS apps — by <a href="https://www.enliq.com">Enliq</a>.
+</p>
 
-`EIQJailbreakDetector` is a tool for detecting whether the current device is jailbroken, offering various checks to enhance security.
+<p align="center">
+  <a href="https://developer.enliq.com"><b>Developer Docs</b></a> ·
+  <a href="https://github.com/loodos/enliq-utilities-ios-sdk/releases"><b>Releases</b></a> ·
+  <a href="#support"><b>Support</b></a>
+</p>
 
-### 2. EIQOfflineControl
+---
 
-`EIQOfflineControl` monitors the internet connection status and type on iOS devices, providing real-time updates on network availability.
+## Contents
 
-### 3. EIQCommonUtils
-
-`EIQCommonUtils` It has common utils properties like Color, String Format, Units, File/IO, Permission, Preferences, Device, Clipboard, Time etc.
-
-## Installation: 
-
-If you are working on a single module project you can use Option 1.
-Otherwise, (if you are developed a SPM based modular project) you should use Option 2.
-
-### Option 1: Single Module Project
-
-- File > Swift Packages > Add Package Dependency or you can use Xcode SPM addition menu:
-<img width="1024" alt="packageAdding" src="https://github.com/user-attachments/assets/32235ea4-e9f3-45c1-8c31-8debd29fa410">
-
-- Add `https://github.com/loodos/enliq-ios-utilities.git`
-
-- Select "Up to Next Minor" with "1.0.0"
-
-<img width="1024" alt="repositoryAddition" src="https://github.com/user-attachments/assets/8073bb7a-9ee7-4d76-b9f8-17482e6a0859">
-
-
-**Note:** Since this module is in a pre-release stage, the release tag was created as 1.0.0. Some minor changes can be applied. After the release stage, this selection opiton can be changed as "Up to Next Major".
-
-### Option 2: SPM Modular Project
-
-#### Sub-Option 1: Adding All Packages
-
-You can add all packages with using the `EIQUtils` target on at once.
-To use `EIQUtils`, add the following dependency in your `Package.swift` file:
-
-```swift
-    dependencies: [
-        ...
-        .package(
-            url: "https://github.com/loodos/enliq-ios-utilities.git",
-            .upToNextMinor(from: "1.0.0")
-        )
-    ],
-    ....
-    targets: [
-        ...,
-        .target(
-            name: "{Target Name}",
-            dependencies: [
-                ...,
-                .product(name: "EIQUtils", package: "enliq-ios-utilities"),
-            ]
-        ),
-        ...
-    ]
-```
-Then, depending on which sub-package you want to use, add the relevant package(s) to your target’s dependencies.
-
-#### Sub-Option 2: Adding Single Package
-
-To include **only** (for example) `EIQJailbreakDetector`, configure your target like this:
-
-```swift
-    dependencies: [
-        ...
-        .package(
-            url: "https://github.com/loodos/enliq-ios-utilities.git",
-            .upToNextMinor(from: "1.0.0")
-        )
-    ],
-    ....
-    targets: [
-        ...,
-        .target(
-            name: "{Target Name}",
-            dependencies: [
-                ...,
-                .product(name: "EIQJailbreakDetector", package: "enliq-ios-utilities")
-            ]
-        ),
-        ...
-    ]
-```
-
-## Usage
-
-### EIQOfflineControl
-
-For detailed usage information, refer to the specific README.md of EIQOfflineControl [here](EIQUtils//Sources/EIQOfflineControl/README.md).
-
-### EIQJailbreakDetector
-
-For detailed usage information, refer to the specific README.md of EIQJailbreakDetector [here](EIQUtils//Sources/EIQJailbreakDetector/README.md).
-
-### EIQCommonUtils
-
-For detailed usage information, refer to the specific README.md of EIQJailbreakDetector [here](EIQUtils//Sources/EIQCommonUtils/README.md).
+- [Requirements](#requirements)
+- [Libraries](#libraries)
+- [Installation](#installation)
+- [Migrating to 1.1](#migrating-to-11)
+- [Support](#support)
 
 ## Requirements
 
-- iOS 13.0+
-- Swift 5.9+
-- Xcode 15.0+
+| | Minimum |
+|---|---|
+| iOS | 15.0 |
+| Xcode | 16.0 |
+| Swift | 5.9 |
 
+Every utility is distributed as a precompiled **binary XCFramework** built with library evolution. Internal dependencies are embedded, so there are **no third-party dependencies** to resolve in your project.
+
+## Libraries
+
+Add only the utilities you need, or the `EIQUtils` product to get all of them.
+
+| Library | Description | Guide |
+|---|---|---|
+| `EIQJailbreakDetector` | Detects jailbroken devices | [Guide](docs/EIQJailbreakDetector.md) |
+| `EIQScreenshot` | Protects selected views from screenshots and screen recording | [Guide](docs/EIQScreenshot.md) |
+| `EIQOfflineControl` | Monitors connectivity and connection type (Wi-Fi, cellular, none) | [Guide](docs/EIQOfflineControl.md) |
+| `EIQUpdateControl` | Force / soft update decisions from backend rules | [Guide](docs/EIQUpdateControl.md) |
+| `EIQLocalization` | Remote-configured, runtime-switchable localization | [Guide](docs/EIQLocalization.md) |
+| `EIQValidator` | Rule-based text field validation | [Guide](docs/EIQValidator.md) |
+| `EIQToast` | Customizable toast notifications | [Guide](docs/EIQToast.md) |
+| `EIQAttributedBuilder` | Chainable `NSAttributedString` builder | [Guide](docs/EIQAttributedBuilder.md) |
+| `EIQAppIconChanger` | Switches alternate app icons at runtime | [Guide](docs/EIQAppIconChanger.md) |
+| `EIQCommonUtils` | Common extensions and helpers (device, clipboard, colors, views…) | [Guide](docs/EIQCommonUtils.md) |
+
+## Installation
+
+### Swift Package Manager
+
+**Xcode:** `File` → `Add Package Dependencies…` → enter the URL below → choose **Up to Next Major Version** → pick the libraries for your target.
+
+```
+https://github.com/loodos/enliq-utilities-ios-sdk
+```
+
+**Package.swift:**
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/loodos/enliq-utilities-ios-sdk.git", .upToNextMajor(from: "1.1.0"))
+],
+targets: [
+    .target(
+        name: "YourApp",
+        dependencies: [
+            .product(name: "EIQOfflineControl", package: "enliq-utilities-ios-sdk"),
+            .product(name: "EIQUpdateControl", package: "enliq-utilities-ios-sdk"),
+            // or everything:
+            // .product(name: "EIQUtils", package: "enliq-utilities-ios-sdk"),
+        ]
+    )
+]
+```
+
+Import each utility by its module name, e.g. `import EIQOfflineControl`.
+
+## Migrating to 1.1
+
+- Minimum deployment target is now **iOS 15.0**.
+- Install from this repository (`enliq-utilities-ios-sdk`); the package name in `.product(…, package:)` is `enliq-utilities-ios-sdk`.
+- `EIQUpdateControl` no longer adds `json-logic-swift` to your project. If your app uses it directly, add it as your own dependency.
+- If you previously used the utilities from source, run **Product → Clean Build Folder** (or delete DerivedData) once after switching.
+
+## Support
+
+- **Integration guides & changelog:** [developer.enliq.com](https://developer.enliq.com)
+- **Bug reports:** [GitHub Issues](https://github.com/loodos/enliq-utilities-ios-sdk/issues)
+- **Account questions:** contact your Enliq account manager.
+
+---
+
+<p align="center">© Enliq. All rights reserved.</p>
